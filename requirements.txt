@@ -1,0 +1,14 @@
+# Pacotes da primeira parte; usar a venv engenharia_ia_venv, com PyTorch/CUDA compatível.
+# Versões observadas localmente. Inferência completa ainda precisa ser validada.
+transformers==5.8.1
+accelerate==1.13.0
+bitsandbytes==0.49.2
+langchain-core==1.6.3
+pypdf==6.16.2
+chromadb==1.5.9
+sentence-transformers==5.7.0
+streamlit==1.64.0
+peft==0.19.1
+fastapi==0.116.1
+uvicorn==0.34.0
+requests==2.32.3

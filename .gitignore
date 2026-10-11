@@ -1,0 +1,6 @@
+banco_chroma/
+adaptador_pf/
+resultados/
+dados_processados/
+documentos/*.pdf
+__pycache__/

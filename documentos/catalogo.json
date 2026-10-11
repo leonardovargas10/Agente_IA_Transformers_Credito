@@ -1,0 +1,32 @@
+[
+  {
+    "id": "attention_is_all_you_need",
+    "title": "Attention Is All You Need",
+    "topic": "transformers",
+    "url": "https://arxiv.org/pdf/1706.03762",
+    "file": "attention_is_all_you_need.pdf",
+    "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+    "training_allowed": false,
+    "pages": 15
+  },
+  {
+    "id": "consumer_default",
+    "title": "Predicting Consumer Default: A Deep Learning Approach",
+    "topic": "credito_pf",
+    "url": "https://arxiv.org/pdf/1908.11498",
+    "file": "consumer_default.pdf",
+    "sha256": "0016e32b767b71e635750266a4c146c5cf5c3344b1b12710285172905d202b73",
+    "training_allowed": false,
+    "pages": 68
+  },
+  {
+    "id": "pragma",
+    "title": "PRAGMA: Revolut Foundation Model",
+    "topic": "transformers_bancario",
+    "url": "https://arxiv.org/pdf/2604.08649",
+    "file": "pragma.pdf",
+    "sha256": "22f38367d2fe7e745a4e4d4003f7f523a9c29122dac1d0ff87370dc0703a2df1",
+    "training_allowed": false,
+    "pages": 20
+  }
+]
