@@ -40,7 +40,7 @@ class ChatRequest(BaseModel):
     history: list[Message] = Field(default_factory=list)
     use_rag: bool = True
     use_mmr: bool = True
-    model_mode: Literal["Base", "Ajustado"] = "Base"
+    model_mode: Literal["Base", "Ajustado"] = "Ajustado"
     k: int = Field(default=4, ge=1, le=8)
 
 class Source(BaseModel):
