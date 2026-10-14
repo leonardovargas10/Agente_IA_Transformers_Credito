@@ -15,7 +15,7 @@
 > **Status:**
 
 <p align="center">
-  <img src="https://img.shields.io/static/v1?label=STATUS&message=PROT%C3%93TIPO%20LOCAL%20EM%20AVALIA%C3%87%C3%83O&color=orange&style=for-the-badge"/>
+  <img src="https://img.shields.io/static/v1?label=STATUS&message=PROT%C3%93TIPO%20LOCAL%20EM%20AVALIA%C3%87%C3%83O&color=green&style=for-the-badge"/>
 </p>
 
 ---
@@ -87,11 +87,9 @@ O Qwen recebe tokens e produz uma distribuição de probabilidade para o próxim
 
 A atenção permite que uma posição da sequência atribua pesos a outras posições. Uma forma simplificada do mecanismo é:
 
-$$
-\operatorname{Attention}(Q,K,V)
-=
-\operatorname{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
-$$
+```text
+Attention(Q, K, V) = softmax((Q × Kᵀ) / √dₖ) × V
+```
 
 As matrizes (Q), (K) e (V) são projeções das representações de entrada. Esse mecanismo ajuda o modelo a combinar informações de diferentes posições; não constitui, por si só, uma explicação causal das previsões.
 
@@ -99,11 +97,9 @@ As matrizes (Q), (K) e (V) são projeções das representações de entrada. Ess
 
 O encoder multilíngue transforma uma pergunta ou um trecho em um vetor. Para comparar dois vetores (q) e (x), utiliza-se a similaridade de cosseno:
 
-$$
-\operatorname{cos}(q,x)
-=
-\frac{q^\top x}{\|q\|_2\,\|x\|_2}
-$$
+```text
+cos(q, x) = (q · x) / (||q||₂ × ||x||₂)
+```
 
 Quando os vetores são normalizados para norma 1, o cosseno equivale ao produto escalar. A medida ajuda a ordenar trechos por proximidade no espaço do encoder; não indica probabilidade de relevância nem garante que uma resposta esteja correta.
 
@@ -121,9 +117,9 @@ RAG significa *Retrieval-Augmented Generation*. Primeiro, recuperam-se trechos d
 
 LoRA congela os pesos originais (W) e aprende uma atualização de baixo posto:
 
-$$
-W' = W + \frac{\alpha}{r}BA
-$$
+```text
+W' = W + (α / r) × B × A
+```
 
 QLoRA mantém a base quantizada e congelada enquanto treina os adaptadores LoRA. Neste projeto, a base é carregada em 4 bits com NF4 e cálculo FP16; os adaptadores têm rank (r=8), escala (alpha=16) e são aplicados às projeções `q_proj` e `v_proj`. Assim, treinam-se poucos parâmetros em comparação com o ajuste completo, embora a base ainda precise participar do forward e ocupar memória.
 
